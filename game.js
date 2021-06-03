@@ -66,6 +66,7 @@ var nextSequence = ()=>{
 
 
 var playGameCard = ()=>{
+    userClickedPattern = [];
     var buttonColours = ["red", "blue", "green", "yellow"];
     var randomChosenColour =  buttonColours[nextSequence()];
     gamePattern.push(randomChosenColour);
