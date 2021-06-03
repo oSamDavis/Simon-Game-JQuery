@@ -18,11 +18,13 @@ var startGame = () =>{
     
     gameStarted = true;  
     playGameCard();
-    playUserCard();
+  
        
            
     
 };
+
+
 
 
 var playSound = (name)=>{    
@@ -58,6 +60,7 @@ var checkAnswer= (currentLevel)=>{
 var nextSequence = ()=>{
     let randomNumber = Math.floor(Math.random() * 10);
     randomNumber =  (randomNumber % 4);
+    console.log("in here");
     level += 1;
     $("h1").text(`Level ${level}`);
     return randomNumber;
@@ -79,7 +82,8 @@ var playGameCard = ()=>{
     };
 
 
-var playUserCard = ()=>{
+
+var addOnClickEventListenerOnButton = ()=>{
     $(".btn").on("click", (event)=>{
         let userChosenColor = event.target.getAttribute("id");
         userClickedPattern.push(userChosenColor);
@@ -96,8 +100,8 @@ var startOver = ()=>{
     level = 0; // user levels
     gameStarted = false;
 
-    game();
 };
 
 
 game();
+addOnClickEventListenerOnButton();
